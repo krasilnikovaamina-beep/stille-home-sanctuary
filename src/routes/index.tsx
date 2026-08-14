@@ -7,6 +7,10 @@ import heroImg from "@/assets/hero.jpg";
 import detailImg from "@/assets/detail.jpg";
 import bedroomImg from "@/assets/bedroom.jpg";
 import kitchenImg from "@/assets/kitchen.jpg";
+import serviceEssentialImg from "@/assets/service-essential.jpg";
+import serviceSignatureImg from "@/assets/service-signature.jpg";
+import serviceHousekeepingImg from "@/assets/service-housekeeping.jpg";
+
 
 const title = "STILLE — Diskret home care og rengøring i Aarhus";
 const description =
