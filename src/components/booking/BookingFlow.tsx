@@ -57,13 +57,25 @@ function Choice({
       type="button"
       onClick={onSelect}
       aria-pressed={selected}
-      className={`flex w-full items-baseline justify-between border-b border-border py-6 text-left transition-colors duration-500 ${
-        selected ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+      className={`group flex w-full items-baseline justify-between border-b border-border py-6 text-left transition-all duration-500 ${
+        selected
+          ? "border-foreground bg-foreground/[0.03] text-foreground"
+          : "text-muted-foreground hover:text-foreground"
       }`}
     >
       <span className="font-serif text-xl md:text-2xl">{label}</span>
-      <span className="text-[0.65rem] tracking-[0.22em] uppercase">
-        {selected ? "Valgt" : "Vælg"}
+      <span
+        className={`text-[0.65rem] tracking-[0.22em] uppercase transition-colors duration-500 ${
+          selected ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"
+        }`}
+      >
+        {selected ? (
+          <span className="inline-flex items-center gap-2">
+            Valgt <span aria-hidden="true">✓</span>
+          </span>
+        ) : (
+          "Vælg"
+        )}
       </span>
     </button>
   );
