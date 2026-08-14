@@ -241,6 +241,7 @@ export function BookingFlow({ initialService }: { initialService?: string }) {
         )}
         {step < steps.length - 1 ? (
           <button
+            key="next"
             type="button"
             disabled={!canContinue}
             onClick={() => setStep((s) => s + 1)}
@@ -250,6 +251,7 @@ export function BookingFlow({ initialService }: { initialService?: string }) {
           </button>
         ) : (
           <button
+            key="submit"
             type="submit"
             className="border border-foreground/60 px-10 py-4 text-[0.7rem] tracking-[0.22em] uppercase transition-colors duration-500 hover:bg-foreground hover:text-background"
           >
