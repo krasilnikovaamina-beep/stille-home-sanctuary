@@ -62,6 +62,7 @@ function Choice({
   return (
     <div
       role="button"
+      aria-label={label}
       aria-pressed={selected}
       tabIndex={0}
       onClick={onSelect}
@@ -84,7 +85,6 @@ function Choice({
             ? "text-foreground"
             : "border-b border-border pb-0.5 text-muted-foreground hover:border-foreground hover:text-foreground group-hover:border-foreground group-hover:text-foreground"
         }`}
-        aria-label={selected ? "Valgt" : `Vælg ${label}`}
       >
         {selected ? (
           <span className="inline-flex items-center gap-2">
