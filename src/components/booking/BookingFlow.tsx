@@ -52,42 +52,49 @@ function Choice({
   selected: boolean;
   onSelect: () => void;
 }) {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      onSelect();
+    }
+  };
+
   return (
-    <button
-      type="button"
-      onClick={onSelect}
+    <div
+      role="button"
       aria-pressed={selected}
-      className={`group flex w-full cursor-pointer items-baseline justify-between border-b border-border py-6 text-left transition-all duration-500 ${
+      tabIndex={0}
+      onClick={onSelect}
+      onKeyDown={handleKeyDown}
+      className={`group flex w-full cursor-pointer items-baseline justify-between border-b border-border py-6 text-left transition-all duration-200 ${
         selected
           ? "border-foreground bg-foreground/[0.04] text-foreground"
-          : "text-muted-foreground hover:bg-foreground/[0.02] hover:text-foreground"
+          : "text-muted-foreground hover:bg-[#f5f4f2] hover:text-foreground"
       }`}
     >
-      <span
-        className={`font-serif text-xl transition-colors duration-500 md:text-2xl ${
-          selected ? "text-foreground" : ""
-        }`}
-      >
-        {label}
-      </span>
-      <span
-        className={`flex items-center gap-2 text-[0.65rem] tracking-[0.22em] uppercase transition-all duration-500 ${
+      <span className="font-serif text-xl md:text-2xl">{label}</span>
+      <button
+        type="button"
+        onClick={(e) => {
+          e.stopPropagation();
+          onSelect();
+        }}
+        className={`cursor-pointer text-[0.65rem] tracking-[0.22em] uppercase transition-all duration-200 ${
           selected
             ? "text-foreground"
-            : "text-muted-foreground group-hover:text-foreground"
+            : "border-b border-border pb-0.5 text-muted-foreground hover:border-foreground hover:text-foreground group-hover:border-foreground group-hover:text-foreground"
         }`}
+        aria-label={selected ? "Valgt" : `Vælg ${label}`}
       >
         {selected ? (
-          <>
+          <span className="inline-flex items-center gap-2">
             Valgt <span aria-hidden="true">✓</span>
-          </>
-        ) : (
-          <span className="border-b border-border pb-0.5 group-hover:border-foreground">
-            Vælg
           </span>
+        ) : (
+          "Vælg"
         )}
-      </span>
-    </button>
+      </button>
+    </div>
   );
 }
 
