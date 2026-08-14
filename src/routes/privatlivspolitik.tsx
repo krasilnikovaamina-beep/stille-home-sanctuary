@@ -37,13 +37,20 @@ const sections = [
           Website: {placeholder("stillehome.dk")}
         </p>
         <p className="mt-4 text-sm leading-relaxed">
-          Virksomhedens juridiske navn: {placeholder("[Indsæt firmanavn]")}
+          STILLE er et brand under We Care.
           <br />
-          CVR-nummer: {placeholder("[Indsæt CVR-nummer]")}
+          STILLE drives og administreres af We Care.
+          <br />
+          Virksomhedens juridiske navn: We Care
+          <br />
+          CVR-nummer: 43510916
           <br />
           Adresse: {placeholder("[Indsæt adresse]")}
           <br />
           E-mail: {placeholder("[Indsæt kontakt-e-mail]")}
+        </p>
+        <p className="mt-4 leading-relaxed">
+          Alle aftaler, fakturering og juridiske forhold håndteres gennem We Care.
         </p>
       </>
     ),
@@ -127,7 +134,7 @@ const sections = [
         <p className="leading-relaxed">
           STILLE deler ikke dine oplysninger med tredjepart i markedsføringsøjemed. Vi kan dog
           anvende relevante samarbejdspartnere, der er nødvendige for at drive vores virksomhed og
-          website, såsom:
+          website, herunder We Care som administrerende og juridisk enhed. Det kan blandt andet være:
         </p>
         <ul className="mt-6 space-y-3 text-sm leading-relaxed">
           {[
@@ -199,9 +206,13 @@ const sections = [
           <br />
           E-mail: {placeholder("[Indsæt kontakt-e-mail]")}
           <br />
-          CVR: {placeholder("[Indsæt CVR-nummer]")}
+          CVR: 43510916
           <br />
           Adresse: {placeholder("[Indsæt adresse]")}
+        </p>
+        <p className="mt-4 leading-relaxed">
+          STILLE drives og administreres af We Care. Alle aftaler, fakturering og juridiske forhold
+          håndteres gennem We Care.
         </p>
       </>
     ),
