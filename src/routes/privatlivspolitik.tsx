@@ -134,7 +134,7 @@ const sections = [
         <p className="leading-relaxed">
           STILLE deler ikke dine oplysninger med tredjepart i markedsføringsøjemed. Vi kan dog
           anvende relevante samarbejdspartnere, der er nødvendige for at drive vores virksomhed og
-          website, såsom:
+          website, herunder We Care som administrerende og juridisk enhed. Det kan blandt andet være:
         </p>
         <ul className="mt-6 space-y-3 text-sm leading-relaxed">
           {[
