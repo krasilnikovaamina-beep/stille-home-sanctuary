@@ -6,6 +6,7 @@ import { BookingFlow } from "@/components/booking/BookingFlow";
 import heroImg from "@/assets/hero.jpg";
 import detailTowelsImg from "@/assets/detail-towels.jpg";
 import bedroomImg from "@/assets/bedroom.jpg";
+import kitchenImg from "@/assets/kitchen.jpg";
 import philosophyImg from "@/assets/philosophy.jpg";
 import serviceEssentialImg from "@/assets/service-essential.jpg";
 import serviceSignatureImg from "@/assets/service-signature.jpg";
