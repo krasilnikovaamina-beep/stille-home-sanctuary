@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { SiteNav } from "@/components/SiteNav";
 import { Reveal } from "@/components/Reveal";
-import { ContactForm } from "@/components/ContactForm";
+import { BookingFlow } from "@/components/booking/BookingFlow";
 import heroImg from "@/assets/hero.jpg";
 import detailImg from "@/assets/detail.jpg";
 import bedroomImg from "@/assets/bedroom.jpg";
@@ -290,7 +290,7 @@ function Index() {
               <p className="mt-10 text-[0.7rem] tracking-[0.28em] uppercase">Kontakt STILLE</p>
             </div>
             <div className="md:col-span-6 md:col-start-7">
-              <ContactForm />
+              <BookingFlow />
             </div>
           </Reveal>
         </div>

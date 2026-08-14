@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 
 import { SiteNav } from "@/components/SiteNav";
 import { Reveal } from "@/components/Reveal";
+import { OptionalServices } from "@/components/booking/OptionalServices";
+import type { AddonSelection } from "@/components/booking/options";
 
 export type ServicePageData = {
   no: string;
@@ -18,7 +21,7 @@ export type ServicePageData = {
 };
 
 export function ServicePage({ data }: { data: ServicePageData }) {
-  const optional = ["Ovn", "Køleskab", "Vinduer", "Andre særlige ønsker"];
+  const [addons, setAddons] = useState<AddonSelection>({});
 
   return (
     <div id="top" className="bg-background text-foreground">
@@ -115,19 +118,15 @@ export function ServicePage({ data }: { data: ServicePageData }) {
           <Reveal className="grid gap-16 md:grid-cols-12">
             <div className="md:col-span-4">
               <h2 className="font-serif text-[clamp(1.9rem,3.6vw,3rem)] leading-[1.12]">
-                Kan tilføjes efter behov
+                Tilpas din STILLE-rutine
               </h2>
+              <p className="mt-8 max-w-xs text-sm font-light leading-[2] text-muted-foreground">
+                Tilføj ekstra pleje til din faste service og vælg, hvor ofte den skal udføres.
+              </p>
             </div>
-            <ul className="md:col-span-7 md:col-start-6">
-              {optional.map((item) => (
-                <li
-                  key={item}
-                  className="border-b border-border py-5 font-serif text-xl leading-relaxed first:border-t md:text-2xl"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <div className="md:col-span-7 md:col-start-6">
+              <OptionalServices value={addons} onChange={setAddons} />
+            </div>
             <p className="max-w-xl text-sm font-light leading-[2] text-muted-foreground md:col-span-7 md:col-start-6">
               Din service tilpasses altid dit hjem. Ved første samtale gennemgår vi dine ønsker og
               aftaler præcis, hvad der skal være en del af din faste STILLE-rutine.
