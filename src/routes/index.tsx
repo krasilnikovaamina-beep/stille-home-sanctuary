@@ -64,7 +64,8 @@ function Index() {
           height={1280}
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-[oklch(0.19_0.004_60_/_0.22)]" />
+        <div className="absolute inset-0 bg-[oklch(0.19_0.004_60_/_0.18)]" />
+        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-[linear-gradient(to_top,oklch(0.19_0.004_60_/_0.55),transparent)]" />
         <div className="relative flex h-full items-end">
           <div className="mx-auto w-full max-w-[1600px] px-6 pb-20 md:px-12 md:pb-28">
             <Reveal>
