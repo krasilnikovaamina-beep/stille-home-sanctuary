@@ -246,7 +246,7 @@ function Index() {
               Fortæl os lidt om dit hjem – så sammensætter vi resten.
             </p>
             <a
-              href="#kontakt"
+              href="#booking"
               className="border border-foreground/60 px-10 py-4 text-[0.7rem] tracking-[0.22em] uppercase transition-colors duration-500 hover:bg-foreground hover:text-background"
             >
               Start din STILLE-rutine
@@ -304,7 +304,7 @@ function Index() {
               </p>
               <p className="mt-10 text-[0.7rem] tracking-[0.28em] uppercase">Kontakt STILLE</p>
             </div>
-            <div className="md:col-span-6 md:col-start-7">
+            <div id="booking" className="md:col-span-6 md:col-start-7 scroll-mt-10">
               <BookingFlow />
             </div>
           </Reveal>
