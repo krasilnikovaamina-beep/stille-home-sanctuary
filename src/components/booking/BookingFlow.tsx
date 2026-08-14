@@ -88,6 +88,7 @@ export function BookingFlow({ initialService }: { initialService?: string }) {
 
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
+    if (step !== steps.length - 1) return;
     setSent(true);
   };
 
