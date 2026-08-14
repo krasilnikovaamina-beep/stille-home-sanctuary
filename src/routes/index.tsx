@@ -190,13 +190,13 @@ function Index() {
 
       {/* Details / Atmosphere */}
       <section className="border-t border-border">
-        <div className="mx-auto max-w-[1600px] px-6 py-32 md:px-12 md:py-52">
-          <div className="grid gap-16 md:grid-cols-12">
-            <Reveal className="md:col-span-5 md:col-start-1">
+        <div className="mx-auto max-w-[1600px] px-6 py-24 md:px-12 md:py-36">
+          <div className="grid items-start gap-12 md:grid-cols-12 md:gap-16">
+            <Reveal className="md:col-span-4 md:col-start-1">
               <h2 className="font-serif text-[clamp(2rem,4.5vw,3.75rem)] leading-[1.1]">
                 Detaljerne ændrer alt.
               </h2>
-              <div className="mt-12 space-y-6 text-sm font-light leading-[2] text-muted-foreground md:text-base">
+              <div className="mt-10 space-y-5 text-sm font-light leading-[2] text-muted-foreground md:text-base">
                 <p>
                   Et foldet håndklæde.
                   <br />
@@ -212,15 +212,15 @@ function Index() {
                 </p>
               </div>
             </Reveal>
-            <Reveal delay={160} className="md:col-span-6 md:col-start-7">
-              <div className="grid gap-8">
+            <Reveal delay={160} className="md:col-span-7 md:col-start-6">
+              <div className="relative">
                 <img
                   src={detailTowelsImg}
                   alt="Foldede linnedhåndklæder på en stenhylde i et minimalistisk badeværelse"
                   width={1600}
                   height={1104}
                   loading="lazy"
-                  className="w-full object-cover"
+                  className="h-auto max-h-[55vh] w-full object-cover"
                 />
                 <img
                   src={detailStoneImg}
@@ -228,7 +228,7 @@ function Index() {
                   width={1200}
                   height={1500}
                   loading="lazy"
-                  className="ml-auto w-3/4 object-cover"
+                  className="absolute bottom-4 right-4 w-[35%] object-cover shadow-sm md:-bottom-8 md:-left-8 md:right-auto md:w-[32%]"
                 />
               </div>
             </Reveal>
