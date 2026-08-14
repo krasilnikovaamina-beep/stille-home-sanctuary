@@ -206,9 +206,13 @@ const sections = [
           <br />
           E-mail: {placeholder("[Indsæt kontakt-e-mail]")}
           <br />
-          CVR: {placeholder("[Indsæt CVR-nummer]")}
+          CVR: 43510916
           <br />
           Adresse: {placeholder("[Indsæt adresse]")}
+        </p>
+        <p className="mt-4 leading-relaxed">
+          STILLE drives og administreres af We Care. Alle aftaler, fakturering og juridiske forhold
+          håndteres gennem We Care.
         </p>
       </>
     ),
