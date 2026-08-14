@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { SiteNav } from "@/components/SiteNav";
 import { Reveal } from "@/components/Reveal";
@@ -34,6 +34,7 @@ const services = [
   {
     no: "01",
     name: "STILLE Essential",
+    to: "/service/essential" as const,
     short: "Den faste pleje af dit hjem.",
     description:
       "En gennemført rengøring af de rum og overflader, der danner rammen om din hverdag.",
@@ -44,6 +45,7 @@ const services = [
   {
     no: "02",
     name: "STILLE Signature",
+    to: "/service/signature" as const,
     short: "Når detaljerne får mere plads.",
     description:
       "En udvidet service med særlig opmærksomhed på køkken, badeværelser og de områder, der kræver lidt ekstra.",
@@ -54,6 +56,7 @@ const services = [
   {
     no: "03",
     name: "STILLE Housekeeping",
+    to: "/service/housekeeping" as const,
     short: "Når hjemmet skal føles helt færdigt.",
     description:
       "Vores mest komplette løsning, hvor rengøring møder personlig home care og de små detaljer, der skaber ro.",
@@ -160,12 +163,12 @@ function Index() {
                   <p className="mt-8 max-w-sm text-sm font-light leading-[1.9] text-muted-foreground">
                     {s.description}
                   </p>
-                  <a
-                    href="#kontakt"
+                  <Link
+                    to={s.to}
                     className="link-underline mt-10 inline-block text-[0.7rem] tracking-[0.28em] uppercase"
                   >
                     Læs mere
-                  </a>
+                  </Link>
                 </Reveal>
                 <Reveal className={imgCol} delay={i * 120 + 80}>
                   <img
