@@ -169,9 +169,10 @@ export function ServicePage({ data }: { data: ServicePageData }) {
             <p className="mt-6 text-sm font-light text-muted-foreground">stillehome.dk</p>
           </div>
           <nav className="flex flex-col gap-4 text-sm font-light md:items-end">
-            <a href="/#service" className="link-underline self-start md:self-end">Vores service</a>
-            <a href="/#om" className="link-underline self-start md:self-end">Om STILLE</a>
-            <a href="/#kontakt" className="link-underline self-start md:self-end">Kontakt</a>
+            <Link to="/" hash="service" className="link-underline self-start md:self-end">Vores service</Link>
+            <Link to="/" hash="om" className="link-underline self-start md:self-end">Om STILLE</Link>
+            <Link to="/" hash="kontakt" className="link-underline self-start md:self-end">Kontakt</Link>
+            <Link to="/privatlivspolitik" className="link-underline self-start md:self-end">Privatlivspolitik</Link>
           </nav>
         </div>
       </footer>
