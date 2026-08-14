@@ -7,6 +7,10 @@ import heroImg from "@/assets/hero.jpg";
 import detailImg from "@/assets/detail.jpg";
 import bedroomImg from "@/assets/bedroom.jpg";
 import kitchenImg from "@/assets/kitchen.jpg";
+import serviceEssentialImg from "@/assets/service-essential.jpg";
+import serviceSignatureImg from "@/assets/service-signature.jpg";
+import serviceHousekeepingImg from "@/assets/service-housekeeping.jpg";
+
 
 const title = "STILLE — Diskret home care og rengøring i Aarhus";
 const description =
@@ -28,21 +32,37 @@ export const Route = createFileRoute("/")({
 
 const services = [
   {
+    no: "01",
     name: "STILLE Essential",
-    intro: "Den regelmæssige pleje af dit hjem.",
-    body: "Grundig rengøring af de vigtigste rum og overflader – udført med samme høje standard ved hvert besøg.",
+    short: "Den faste pleje af dit hjem.",
+    description:
+      "En gennemført rengøring af de rum og overflader, der danner rammen om din hverdag.",
+    image: serviceEssentialImg,
+    imageAlt: "Roligt skandinavisk stuemiljø med linned, egetræ og dagslys",
+    imagePosition: "right",
   },
   {
+    no: "02",
     name: "STILLE Signature",
-    intro: "En mere omfattende service.",
-    body: "Ekstra opmærksomhed på detaljer, køkken, badeværelser og de områder, der gør den største forskel i hverdagen.",
+    short: "Når detaljerne får mere plads.",
+    description:
+      "En udvidet service med særlig opmærksomhed på køkken, badeværelser og de områder, der kræver lidt ekstra.",
+    image: serviceSignatureImg,
+    imageAlt: "Elegant badeværelsesdetalje med sten, foldede håndklæder og messing",
+    imagePosition: "left",
   },
   {
+    no: "03",
     name: "STILLE Housekeeping",
-    intro: "Vores mest komplette løsning.",
-    body: "Rengøring kombineret med løbende home care og små detaljer, der får hjemmet til at føles færdigt og velplejet.",
+    short: "Når hjemmet skal føles helt færdigt.",
+    description:
+      "Vores mest komplette løsning, hvor rengøring møder personlig home care og de små detaljer, der skaber ro.",
+    image: serviceHousekeepingImg,
+    imageAlt: "Perfekt redt seng med hvidt linned i et lyst soveværelse",
+    imagePosition: "right",
   },
 ];
+
 
 const steps = [
   { no: "01", label: "Fortæl os om dit hjem" },
@@ -110,34 +130,59 @@ function Index() {
       </section>
 
       {/* Services */}
-      <section id="service" className="border-t border-border">
-        <div className="mx-auto max-w-[1600px] px-6 py-28 md:px-12 md:py-40">
-          <Reveal>
-            <p className="eyebrow">Vores service</p>
-          </Reveal>
-          <div className="mt-20 grid gap-px bg-border md:grid-cols-3">
-            {services.map((s, i) => (
-              <Reveal key={s.name} delay={i * 120} className="bg-background">
-                <article className="h-full px-0 py-12 md:px-10 md:py-16">
-                  <h3 className="font-serif text-2xl md:text-[1.75rem]">{s.name}</h3>
-                  <p className="mt-6 text-sm font-light text-foreground/80">{s.intro}</p>
-                  <p className="mt-4 text-sm font-light leading-[2] text-muted-foreground">
-                    {s.body}
+      <section id="service" className="bg-background">
+        <div className="mx-auto max-w-[1600px] px-6 py-24 md:px-12 md:py-36">
+          {services.map((s, i) => {
+            const textCol =
+              s.imagePosition === "right"
+                ? "md:col-span-4 md:col-start-2"
+                : "md:col-span-4 md:col-start-9";
+            const imgCol =
+              s.imagePosition === "right"
+                ? "md:col-span-6 md:col-start-7"
+                : "md:col-span-7 md:col-start-1";
+
+            return (
+              <article
+                key={s.name}
+                className={`grid gap-12 md:grid-cols-12 md:items-center md:gap-16 ${
+                  i !== 0 ? "mt-28 md:mt-44" : ""
+                }`}
+              >
+                <Reveal className={textCol} delay={i * 120}>
+                  <span className="eyebrow">{s.no}</span>
+                  <h2 className="mt-8 font-serif text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05] tracking-tight">
+                    {s.name}
+                  </h2>
+                  <p className="mt-6 max-w-sm font-serif text-lg italic text-muted-foreground md:text-xl">
+                    {s.short}
                   </p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-          <Reveal className="mt-20">
-            <a
-              href="#kontakt"
-              className="link-underline inline-block text-[0.7rem] tracking-[0.28em] uppercase"
-            >
-              Se vores services
-            </a>
-          </Reveal>
+                  <p className="mt-8 max-w-sm text-sm font-light leading-[1.9] text-muted-foreground">
+                    {s.description}
+                  </p>
+                  <a
+                    href="#kontakt"
+                    className="link-underline mt-10 inline-block text-[0.7rem] tracking-[0.28em] uppercase"
+                  >
+                    Læs mere
+                  </a>
+                </Reveal>
+                <Reveal className={imgCol} delay={i * 120 + 80}>
+                  <img
+                    src={s.image}
+                    alt={s.imageAlt}
+                    width={1344}
+                    height={768}
+                    loading="lazy"
+                    className="h-[45vh] min-h-[320px] w-full object-cover md:h-[55vh] md:max-h-[720px]"
+                  />
+                </Reveal>
+              </article>
+            );
+          })}
         </div>
       </section>
+
 
       {/* Experience */}
       <section className="relative">
