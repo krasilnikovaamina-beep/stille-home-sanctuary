@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 
 import { SiteNav } from "@/components/SiteNav";
 import { Reveal } from "@/components/Reveal";
+import { Footer } from "@/components/Footer";
 import { OptionalServices } from "@/components/booking/OptionalServices";
 import type { AddonSelection } from "@/components/booking/options";
 

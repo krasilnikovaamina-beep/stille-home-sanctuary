@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { SiteNav } from "@/components/SiteNav";
 import { Reveal } from "@/components/Reveal";
+import { Footer } from "@/components/Footer";
 import { BookingFlow } from "@/components/booking/BookingFlow";
 import heroImg from "@/assets/hero.jpg";
 import detailTowelsImg from "@/assets/detail-towels.jpg";
