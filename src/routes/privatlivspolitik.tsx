@@ -37,13 +37,20 @@ const sections = [
           Website: {placeholder("stillehome.dk")}
         </p>
         <p className="mt-4 text-sm leading-relaxed">
-          Virksomhedens juridiske navn: {placeholder("[Indsæt firmanavn]")}
+          STILLE er et brand under We Care.
           <br />
-          CVR-nummer: {placeholder("[Indsæt CVR-nummer]")}
+          STILLE drives og administreres af We Care.
+          <br />
+          Virksomhedens juridiske navn: We Care
+          <br />
+          CVR-nummer: 43510916
           <br />
           Adresse: {placeholder("[Indsæt adresse]")}
           <br />
           E-mail: {placeholder("[Indsæt kontakt-e-mail]")}
+        </p>
+        <p className="mt-4 leading-relaxed">
+          Alle aftaler, fakturering og juridiske forhold håndteres gennem We Care.
         </p>
       </>
     ),
