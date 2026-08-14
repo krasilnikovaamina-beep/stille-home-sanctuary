@@ -241,6 +241,17 @@ function Index() {
               Vi tilpasser frekvens, service og detaljer efter dit hjem og din hverdag.
             </p>
           </Reveal>
+          <Reveal className="mt-28 flex flex-col items-center gap-8 text-center">
+            <p className="max-w-md text-xs font-light leading-[2] text-muted-foreground">
+              Fortæl os lidt om dit hjem – så sammensætter vi resten.
+            </p>
+            <a
+              href="#kontakt"
+              className="border border-foreground/60 px-10 py-4 text-[0.7rem] tracking-[0.22em] uppercase transition-colors duration-500 hover:bg-foreground hover:text-background"
+            >
+              Start din STILLE-rutine
+            </a>
+          </Reveal>
         </div>
       </section>
 
