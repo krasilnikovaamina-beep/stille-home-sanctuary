@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 
 import { SiteNav } from "@/components/SiteNav";
 import { Reveal } from "@/components/Reveal";
+import { Footer } from "@/components/Footer";
 import { OptionalServices } from "@/components/booking/OptionalServices";
 import type { AddonSelection } from "@/components/booking/options";
 
@@ -157,25 +158,7 @@ export function ServicePage({ data }: { data: ServicePageData }) {
         </div>
       </section>
 
-      <footer className="border-t border-border">
-        <div className="mx-auto grid max-w-[1600px] gap-12 px-6 py-20 md:grid-cols-2 md:px-12">
-          <div>
-            <p className="font-serif text-lg tracking-[0.42em]">STILLE</p>
-            <p className="mt-6 text-sm font-light text-muted-foreground">
-              Premium home care
-              <br />
-              Aarhus &amp; omegn
-            </p>
-            <p className="mt-6 text-sm font-light text-muted-foreground">stillehome.dk</p>
-          </div>
-          <nav className="flex flex-col gap-4 text-sm font-light md:items-end">
-            <Link to="/" hash="service" className="link-underline self-start md:self-end">Vores service</Link>
-            <Link to="/" hash="om" className="link-underline self-start md:self-end">Om STILLE</Link>
-            <Link to="/" hash="kontakt" className="link-underline self-start md:self-end">Kontakt</Link>
-            <Link to="/privatlivspolitik" className="link-underline self-start md:self-end">Privatlivspolitik</Link>
-          </nav>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
