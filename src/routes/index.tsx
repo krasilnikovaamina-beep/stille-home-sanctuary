@@ -32,21 +32,37 @@ export const Route = createFileRoute("/")({
 
 const services = [
   {
+    no: "01",
     name: "STILLE Essential",
-    intro: "Den regelmæssige pleje af dit hjem.",
-    body: "Grundig rengøring af de vigtigste rum og overflader – udført med samme høje standard ved hvert besøg.",
+    short: "Den faste pleje af dit hjem.",
+    description:
+      "En gennemført rengøring af de rum og overflader, der danner rammen om din hverdag.",
+    image: serviceEssentialImg,
+    imageAlt: "Roligt skandinavisk stuemiljø med linned, egetræ og dagslys",
+    imagePosition: "right",
   },
   {
+    no: "02",
     name: "STILLE Signature",
-    intro: "En mere omfattende service.",
-    body: "Ekstra opmærksomhed på detaljer, køkken, badeværelser og de områder, der gør den største forskel i hverdagen.",
+    short: "Når detaljerne får mere plads.",
+    description:
+      "En udvidet service med særlig opmærksomhed på køkken, badeværelser og de områder, der kræver lidt ekstra.",
+    image: serviceSignatureImg,
+    imageAlt: "Elegant badeværelsesdetalje med sten, foldede håndklæder og messing",
+    imagePosition: "left",
   },
   {
+    no: "03",
     name: "STILLE Housekeeping",
-    intro: "Vores mest komplette løsning.",
-    body: "Rengøring kombineret med løbende home care og små detaljer, der får hjemmet til at føles færdigt og velplejet.",
+    short: "Når hjemmet skal føles helt færdigt.",
+    description:
+      "Vores mest komplette løsning, hvor rengøring møder personlig home care og de små detaljer, der skaber ro.",
+    image: serviceHousekeepingImg,
+    imageAlt: "Perfekt redt seng med hvidt linned i et lyst soveværelse",
+    imagePosition: "right",
   },
 ];
+
 
 const steps = [
   { no: "01", label: "Fortæl os om dit hjem" },
