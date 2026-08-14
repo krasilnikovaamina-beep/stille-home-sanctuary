@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PrivatlivspolitikRouteImport } from './routes/privatlivspolitik'
 import { Route as ServiceEssentialRouteImport } from './routes/service.essential'
 import { Route as ServiceHousekeepingRouteImport } from './routes/service.housekeeping'
 import { Route as ServiceSignatureRouteImport } from './routes/service.signature'
@@ -17,6 +18,11 @@ import { Route as ServiceSignatureRouteImport } from './routes/service.signature
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivatlivspolitikRoute = PrivatlivspolitikRouteImport.update({
+  id: '/privatlivspolitik',
+  path: '/privatlivspolitik',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServiceEssentialRoute = ServiceEssentialRouteImport.update({
@@ -37,12 +43,14 @@ const ServiceSignatureRoute = ServiceSignatureRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/privatlivspolitik': typeof PrivatlivspolitikRoute
   '/service/essential': typeof ServiceEssentialRoute
   '/service/housekeeping': typeof ServiceHousekeepingRoute
   '/service/signature': typeof ServiceSignatureRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/privatlivspolitik': typeof PrivatlivspolitikRoute
   '/service/essential': typeof ServiceEssentialRoute
   '/service/housekeeping': typeof ServiceHousekeepingRoute
   '/service/signature': typeof ServiceSignatureRoute
@@ -50,6 +58,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/privatlivspolitik': typeof PrivatlivspolitikRoute
   '/service/essential': typeof ServiceEssentialRoute
   '/service/housekeeping': typeof ServiceHousekeepingRoute
   '/service/signature': typeof ServiceSignatureRoute
@@ -57,13 +66,22 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/service/essential' | '/service/housekeeping' | '/service/signature'
+    | '/'
+    | '/privatlivspolitik'
+    | '/service/essential'
+    | '/service/housekeeping'
+    | '/service/signature'
   fileRoutesByTo: FileRoutesByTo
   to:
-    '/' | '/service/essential' | '/service/housekeeping' | '/service/signature'
+    | '/'
+    | '/privatlivspolitik'
+    | '/service/essential'
+    | '/service/housekeeping'
+    | '/service/signature'
   id:
     | '__root__'
     | '/'
+    | '/privatlivspolitik'
     | '/service/essential'
     | '/service/housekeeping'
     | '/service/signature'
@@ -71,6 +89,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PrivatlivspolitikRoute: typeof PrivatlivspolitikRoute
   ServiceEssentialRoute: typeof ServiceEssentialRoute
   ServiceHousekeepingRoute: typeof ServiceHousekeepingRoute
   ServiceSignatureRoute: typeof ServiceSignatureRoute
@@ -83,6 +102,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privatlivspolitik': {
+      id: '/privatlivspolitik'
+      path: '/privatlivspolitik'
+      fullPath: '/privatlivspolitik'
+      preLoaderRoute: typeof PrivatlivspolitikRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/service/essential': {
@@ -111,6 +137,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PrivatlivspolitikRoute: PrivatlivspolitikRoute,
   ServiceEssentialRoute: ServiceEssentialRoute,
   ServiceHousekeepingRoute: ServiceHousekeepingRoute,
   ServiceSignatureRoute: ServiceSignatureRoute,
