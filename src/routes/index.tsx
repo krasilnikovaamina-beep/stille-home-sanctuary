@@ -4,7 +4,8 @@ import { SiteNav } from "@/components/SiteNav";
 import { Reveal } from "@/components/Reveal";
 import { BookingFlow } from "@/components/booking/BookingFlow";
 import heroImg from "@/assets/hero.jpg";
-import detailImg from "@/assets/detail.jpg";
+import detailTowelsImg from "@/assets/detail-towels.jpg";
+import detailStoneImg from "@/assets/detail-stone.jpg";
 import bedroomImg from "@/assets/bedroom.jpg";
 import kitchenImg from "@/assets/kitchen.jpg";
 import serviceEssentialImg from "@/assets/service-essential.jpg";
@@ -187,37 +188,51 @@ function Index() {
       </section>
 
 
-      {/* Experience */}
-      <section className="relative">
-        <img
-          src={detailImg}
-          alt="Foldede linnedhåndklæder på en stenhylde i et minimalistisk badeværelse"
-          width={1600}
-          height={1104}
-          loading="lazy"
-          className="h-[70vh] w-full object-cover md:h-[88vh]"
-        />
-        <div className="mx-auto max-w-[1600px] px-6 py-28 md:px-12 md:py-40">
-          <Reveal className="grid gap-16 md:grid-cols-12">
-            <h2 className="font-serif text-[clamp(2rem,4.5vw,3.75rem)] leading-[1.1] md:col-span-5">
-              Detaljerne ændrer alt.
-            </h2>
-            <div className="space-y-8 text-sm font-light leading-[2] text-muted-foreground md:col-span-5 md:col-start-8 md:text-base">
-              <p>
-                Et foldet håndklæde.
-                <br />
-                En perfekt redt seng.
-                <br />
-                En blank overflade.
-                <br />
-                En diskret duft.
-              </p>
-              <p className="text-foreground">
-                STILLE er skabt omkring de små ting, man måske ikke altid lægger mærke til – men
-                altid mærker.
-              </p>
-            </div>
-          </Reveal>
+      {/* Details / Atmosphere */}
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-[1600px] px-6 py-32 md:px-12 md:py-52">
+          <div className="grid gap-16 md:grid-cols-12">
+            <Reveal className="md:col-span-5 md:col-start-1">
+              <h2 className="font-serif text-[clamp(2rem,4.5vw,3.75rem)] leading-[1.1]">
+                Detaljerne ændrer alt.
+              </h2>
+              <div className="mt-12 space-y-6 text-sm font-light leading-[2] text-muted-foreground md:text-base">
+                <p>
+                  Et foldet håndklæde.
+                  <br />
+                  En perfekt overflade.
+                  <br />
+                  En diskret duft.
+                  <br />
+                  En rolig helhed.
+                </p>
+                <p className="text-foreground">
+                  STILLE er skabt omkring de små ting, man måske ikke altid lægger mærke til – men
+                  altid mærker.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={160} className="md:col-span-6 md:col-start-7">
+              <div className="grid gap-8">
+                <img
+                  src={detailTowelsImg}
+                  alt="Foldede linnedhåndklæder på en stenhylde i et minimalistisk badeværelse"
+                  width={1600}
+                  height={1104}
+                  loading="lazy"
+                  className="w-full object-cover"
+                />
+                <img
+                  src={detailStoneImg}
+                  alt="Linned vaskeklud på en stenoverflade med naturlig sæbe"
+                  width={1200}
+                  height={1500}
+                  loading="lazy"
+                  className="ml-auto w-3/4 object-cover"
+                />
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
