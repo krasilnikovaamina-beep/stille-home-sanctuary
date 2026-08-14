@@ -274,38 +274,7 @@ function PrivacyPage() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-border">
-        <div className="mx-auto grid max-w-[1600px] gap-12 px-6 py-20 md:grid-cols-2 md:px-12">
-          <div>
-            <p className="font-serif text-lg tracking-[0.42em]">STILLE</p>
-            <p className="mt-6 text-sm font-light text-muted-foreground">
-              Premium home care
-              <br />
-              Aarhus &amp; omegn
-            </p>
-            <p className="mt-6 text-sm font-light text-muted-foreground">stillehome.dk</p>
-          </div>
-          <nav className="flex flex-col gap-4 text-sm font-light md:items-end">
-            <Link to="/" className="link-underline self-start md:self-end">
-              Forside
-            </Link>
-            <Link to="/" hash="service" className="link-underline self-start md:self-end">
-              Vores service
-            </Link>
-            <Link to="/" hash="kontakt" className="link-underline self-start md:self-end">
-              Kontakt
-            </Link>
-            <Link
-              to="/privatlivspolitik"
-              className="link-underline self-start md:self-end text-foreground"
-              aria-current="page"
-            >
-              Privatlivspolitik
-            </Link>
-          </nav>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
