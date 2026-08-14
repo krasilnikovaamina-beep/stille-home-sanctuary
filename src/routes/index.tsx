@@ -5,7 +5,6 @@ import { Reveal } from "@/components/Reveal";
 import { BookingFlow } from "@/components/booking/BookingFlow";
 import heroImg from "@/assets/hero.jpg";
 import detailTowelsImg from "@/assets/detail-towels.jpg";
-import detailStoneImg from "@/assets/detail-stone.jpg";
 import bedroomImg from "@/assets/bedroom.jpg";
 import kitchenImg from "@/assets/kitchen.jpg";
 import serviceEssentialImg from "@/assets/service-essential.jpg";
@@ -213,24 +212,14 @@ function Index() {
               </div>
             </Reveal>
             <Reveal delay={160} className="md:col-span-7 md:col-start-6">
-              <div className="relative">
-                <img
-                  src={detailTowelsImg}
-                  alt="Foldede linnedhåndklæder på en stenhylde i et minimalistisk badeværelse"
-                  width={1600}
-                  height={1104}
-                  loading="lazy"
-                  className="h-auto max-h-[55vh] w-full object-cover"
-                />
-                <img
-                  src={detailStoneImg}
-                  alt="Linned vaskeklud på en stenoverflade med naturlig sæbe"
-                  width={1200}
-                  height={1500}
-                  loading="lazy"
-                  className="absolute bottom-4 right-4 w-[35%] object-cover shadow-sm md:-bottom-8 md:-left-8 md:right-auto md:w-[32%]"
-                />
-              </div>
+              <img
+                src={detailTowelsImg}
+                alt="Foldede linnedhåndklæder på en stenhylde i et minimalistisk badeværelse"
+                width={1600}
+                height={1104}
+                loading="lazy"
+                className="h-auto max-h-[55vh] w-full object-cover"
+              />
             </Reveal>
           </div>
         </div>
