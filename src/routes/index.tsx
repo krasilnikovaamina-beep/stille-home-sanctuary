@@ -6,7 +6,7 @@ import { BookingFlow } from "@/components/booking/BookingFlow";
 import heroImg from "@/assets/hero.jpg";
 import detailTowelsImg from "@/assets/detail-towels.jpg";
 import bedroomImg from "@/assets/bedroom.jpg";
-import kitchenImg from "@/assets/kitchen.jpg";
+import philosophyImg from "@/assets/philosophy.jpg";
 import serviceEssentialImg from "@/assets/service-essential.jpg";
 import serviceSignatureImg from "@/assets/service-signature.jpg";
 import serviceHousekeepingImg from "@/assets/service-housekeeping.jpg";
@@ -108,27 +108,39 @@ function Index() {
 
       {/* Philosophy */}
       <section className="mx-auto max-w-[1600px] px-6 py-32 md:px-12 md:py-52">
-        <Reveal className="grid gap-16 md:grid-cols-12">
-          <h2 className="font-serif text-[clamp(2rem,4.5vw,3.75rem)] leading-[1.1] md:col-span-6">
-            Mere end rengøring.
-          </h2>
-          <div className="space-y-8 text-sm font-light leading-[2] text-muted-foreground md:col-span-5 md:col-start-8 md:text-base">
-            <p>STILLE handler ikke kun om et rent hjem.</p>
-            <p>
-              Det handler om følelsen, når du træder ind ad døren.
-              <br />
-              Duften.
-              <br />
-              Lyset.
-              <br />
-              Overfladerne.
-              <br />
-              Roen.
-            </p>
-            <p className="text-foreground">
-              Vi tager os af detaljerne, så dit hjem føles præcis, som det skal.
-            </p>
+        <Reveal className="grid gap-16 md:grid-cols-12 md:items-start">
+          <div className="md:col-span-5">
+            <h2 className="font-serif text-[clamp(2rem,4.5vw,3.75rem)] leading-[1.1]">
+              Mere end rengøring.
+            </h2>
+            <div className="mt-12 space-y-8 text-sm font-light leading-[2] text-muted-foreground md:text-base">
+              <p>STILLE handler ikke kun om et rent hjem.</p>
+              <p>
+                Det handler om følelsen, når du træder ind ad døren.
+                <br />
+                Duften.
+                <br />
+                Lyset.
+                <br />
+                Overfladerne.
+                <br />
+                Roen.
+              </p>
+              <p className="text-foreground">
+                Vi tager os af detaljerne, så dit hjem føles præcis, som det skal.
+              </p>
+            </div>
           </div>
+          <Reveal delay={160} className="md:col-span-6 md:col-start-7">
+            <img
+              src={philosophyImg}
+              alt="Stilfuldt skandinavisk interiør med en enkel vase, linned og dagslys"
+              width={1536}
+              height={1024}
+              loading="lazy"
+              className="h-auto max-h-[55vh] w-full object-cover"
+            />
+          </Reveal>
         </Reveal>
       </section>
 
