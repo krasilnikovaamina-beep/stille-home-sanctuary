@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 const links = [
-  { label: "Hjem", href: "#top" },
-  { label: "Vores service", href: "#service" },
-  { label: "Om STILLE", href: "#om" },
-  { label: "Kontakt", href: "#kontakt" },
+  { label: "Hjem", href: "/#top" },
+  { label: "Vores service", href: "/#service" },
+  { label: "Om STILLE", href: "/#om" },
+  { label: "Kontakt", href: "/#kontakt" },
 ];
 
 export function SiteNav() {
@@ -26,7 +26,7 @@ export function SiteNav() {
     >
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-6 md:px-12 md:py-8">
         <a
-          href="#top"
+          href="/#top"
           className="font-serif text-xl tracking-[0.42em] text-foreground"
           onClick={() => setOpen(false)}
         >
@@ -44,7 +44,7 @@ export function SiteNav() {
             </a>
           ))}
           <a
-            href="#kontakt"
+            href="/#kontakt"
             className="border border-foreground/60 px-7 py-3 text-[0.7rem] tracking-[0.22em] uppercase text-foreground transition-colors duration-500 hover:bg-foreground hover:text-background"
           >
             Book en samtale
@@ -76,7 +76,7 @@ export function SiteNav() {
               </a>
             ))}
             <a
-              href="#kontakt"
+              href="/#kontakt"
               onClick={() => setOpen(false)}
               className="mt-4 border border-foreground/60 px-7 py-4 text-center text-[0.7rem] tracking-[0.22em] uppercase"
             >

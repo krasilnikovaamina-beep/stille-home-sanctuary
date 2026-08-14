@@ -10,33 +10,70 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServiceEssentialRouteImport } from './routes/service.essential'
+import { Route as ServiceHousekeepingRouteImport } from './routes/service.housekeeping'
+import { Route as ServiceSignatureRouteImport } from './routes/service.signature'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServiceEssentialRoute = ServiceEssentialRouteImport.update({
+  id: '/service/essential',
+  path: '/service/essential',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceHousekeepingRoute = ServiceHousekeepingRouteImport.update({
+  id: '/service/housekeeping',
+  path: '/service/housekeeping',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceSignatureRoute = ServiceSignatureRouteImport.update({
+  id: '/service/signature',
+  path: '/service/signature',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/service/essential': typeof ServiceEssentialRoute
+  '/service/housekeeping': typeof ServiceHousekeepingRoute
+  '/service/signature': typeof ServiceSignatureRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/service/essential': typeof ServiceEssentialRoute
+  '/service/housekeeping': typeof ServiceHousekeepingRoute
+  '/service/signature': typeof ServiceSignatureRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/service/essential': typeof ServiceEssentialRoute
+  '/service/housekeeping': typeof ServiceHousekeepingRoute
+  '/service/signature': typeof ServiceSignatureRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/service/essential' | '/service/housekeeping' | '/service/signature'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    '/' | '/service/essential' | '/service/housekeeping' | '/service/signature'
+  id:
+    | '__root__'
+    | '/'
+    | '/service/essential'
+    | '/service/housekeeping'
+    | '/service/signature'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ServiceEssentialRoute: typeof ServiceEssentialRoute
+  ServiceHousekeepingRoute: typeof ServiceHousekeepingRoute
+  ServiceSignatureRoute: typeof ServiceSignatureRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +85,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/service/essential': {
+      id: '/service/essential'
+      path: '/service/essential'
+      fullPath: '/service/essential'
+      preLoaderRoute: typeof ServiceEssentialRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service/housekeeping': {
+      id: '/service/housekeeping'
+      path: '/service/housekeeping'
+      fullPath: '/service/housekeeping'
+      preLoaderRoute: typeof ServiceHousekeepingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service/signature': {
+      id: '/service/signature'
+      path: '/service/signature'
+      fullPath: '/service/signature'
+      preLoaderRoute: typeof ServiceSignatureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ServiceEssentialRoute: ServiceEssentialRoute,
+  ServiceHousekeepingRoute: ServiceHousekeepingRoute,
+  ServiceSignatureRoute: ServiceSignatureRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
