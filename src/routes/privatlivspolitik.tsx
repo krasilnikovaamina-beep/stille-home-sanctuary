@@ -217,7 +217,7 @@ const sections = [
           <br />
           CVR: 43510916
           <br />
-          Adresse: {placeholder("[Indsæt adresse]")}
+          Adresse: Helga Pedersens Gade 103, 8000 Aarhus C, Denmark
         </p>
         <p className="mt-4 leading-relaxed">
           STILLE drives og administreres af We Care. Alle aftaler, fakturering og juridiske forhold
