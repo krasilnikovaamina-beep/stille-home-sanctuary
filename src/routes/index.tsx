@@ -318,6 +318,11 @@ function Index() {
               </p>
               <p className="mt-10 text-[0.7rem] tracking-[0.28em] uppercase">Kontakt STILLE</p>
               <p className="mt-4 text-sm font-light text-muted-foreground">
+                <a href="tel:+4571423466" className="link-underline">
+                  +45 71 42 34 66
+                </a>
+              </p>
+              <p className="mt-2 text-sm font-light text-muted-foreground">
                 <a href="mailto:kontakt@stillehome.dk" className="link-underline">
                   kontakt@stillehome.dk
                 </a>
