@@ -317,6 +317,11 @@ function Index() {
                 Fortæl os lidt om dit hjem, så vender vi tilbage med en personlig anbefaling.
               </p>
               <p className="mt-10 text-[0.7rem] tracking-[0.28em] uppercase">Kontakt STILLE</p>
+              <p className="mt-4 text-sm font-light text-muted-foreground">
+                <a href="mailto:kontakt@stillehome.dk" className="link-underline">
+                  kontakt@stillehome.dk
+                </a>
+              </p>
             </div>
             <div id="booking" className="md:col-span-6 md:col-start-7 scroll-mt-10">
               <BookingFlow />

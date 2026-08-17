@@ -12,6 +12,11 @@ export function Footer() {
               <br />
               Aarhus &amp; omegn
             </p>
+            <p className="mt-2 text-sm font-light text-muted-foreground">
+              <a href="mailto:kontakt@stillehome.dk" className="link-underline">
+                kontakt@stillehome.dk
+              </a>
+            </p>
             <p className="mt-6 text-sm font-light text-muted-foreground">stillehome.dk</p>
           </div>
           <nav className="flex flex-col gap-4 text-sm font-light md:items-end">

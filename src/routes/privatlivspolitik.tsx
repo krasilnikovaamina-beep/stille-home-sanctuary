@@ -48,7 +48,10 @@ const sections = [
           <br />
           Adresse: {placeholder("[Indsæt adresse]")}
           <br />
-          E-mail: {placeholder("[Indsæt kontakt-e-mail]")}
+          E-mail:{" "}
+          <a href="mailto:kontakt@stillehome.dk" className="link-underline">
+            kontakt@stillehome.dk
+          </a>
         </p>
         <p className="mt-4 leading-relaxed">
           Alle aftaler, fakturering og juridiske forhold håndteres gennem We Care.
@@ -205,7 +208,10 @@ const sections = [
         <p className="mt-6 text-sm leading-relaxed">
           STILLE
           <br />
-          E-mail: {placeholder("[Indsæt kontakt-e-mail]")}
+          E-mail:{" "}
+          <a href="mailto:kontakt@stillehome.dk" className="link-underline">
+            kontakt@stillehome.dk
+          </a>
           <br />
           CVR: 43510916
           <br />
