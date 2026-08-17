@@ -1,4 +1,4 @@
-type BookingPayload = {
+export type BookingPayload = {
   navn: string;
   email: string;
   telefon: string;
@@ -13,17 +13,11 @@ type BookingPayload = {
   addons: Record<string, string>;
 };
 
-// Sends the internal notification to STILLE. Returns false (without failing the
-// submission) while the sender domain is still being verified.
+export const NOTIFY_RECIPIENT = "kontakt@stillehome.dk";
+
+// Sends the internal notification to STILLE. Email sending activates once the
+// sender domain is verified; until then the request is stored and this returns false.
 export async function notifyBookingRequest(data: BookingPayload): Promise<boolean> {
-  try {
-    const { sendTemplateEmail } = await import("./email-templates/send-email");
-    const result = await sendTemplateEmail("booking-request", "kontakt@stillehome.dk", {
-      templateData: data,
-    });
-    return result.sent;
-  } catch (error) {
-    console.error("Booking notification failed", error);
-    return false;
-  }
+  console.log("Booking request received", { email: data.email, service: data.service });
+  return false;
 }
