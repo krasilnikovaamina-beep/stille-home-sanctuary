@@ -1,5 +1,7 @@
 import { useState, type FormEvent } from "react";
+import { useServerFn } from "@tanstack/react-start";
 
+import { submitBooking } from "@/lib/booking.functions";
 import { OptionalServices } from "./OptionalServices";
 import {
   BASE_FREQUENCIES,
@@ -105,6 +107,9 @@ export function BookingFlow({ initialService }: { initialService?: string }) {
   const [addons, setAddons] = useState<AddonSelection>({});
   const [details, setDetails] = useState<Details>(emptyDetails);
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
+  const send = useServerFn(submitBooking);
 
   const set = (key: keyof Details) => (e: { target: { value: string } }) =>
     setDetails((d) => ({ ...d, [key]: e.target.value }));
@@ -115,10 +120,21 @@ export function BookingFlow({ initialService }: { initialService?: string }) {
     step === 2 ||
     (step === 3 && details.navn.trim() !== "" && details.email.trim() !== "");
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (step !== steps.length - 1) return;
-    setSent(true);
+    if (step !== steps.length - 1 || sending) return;
+    setSending(true);
+    setError("");
+    try {
+      await send({ data: { ...details, service, frequency, addons } });
+      setSent(true);
+    } catch {
+      setError(
+        "Din forespørgsel kunne ikke sendes. Prøv igen, eller skriv til kontakt@stillehome.dk.",
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   if (sent) {
@@ -290,10 +306,14 @@ export function BookingFlow({ initialService }: { initialService?: string }) {
           <button
             key="submit"
             type="submit"
-            className="border border-foreground/60 px-10 py-4 text-[0.7rem] tracking-[0.22em] uppercase transition-colors duration-500 hover:bg-foreground hover:text-background"
+            disabled={sending}
+            className="border border-foreground/60 px-10 py-4 text-[0.7rem] tracking-[0.22em] uppercase transition-colors duration-500 hover:bg-foreground hover:text-background disabled:opacity-40"
           >
-            Send forespørgsel
+            {sending ? "Sender …" : "Send forespørgsel"}
           </button>
+        )}
+        {error && (
+          <p className="w-full text-sm font-light text-muted-foreground">{error}</p>
         )}
       </div>
     </form>
