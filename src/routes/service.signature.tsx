@@ -15,8 +15,10 @@ export const Route = createFileRoute("/service/signature")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "/service/signature" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "/service/signature" }],
   }),
   component: SignaturePage,
 });

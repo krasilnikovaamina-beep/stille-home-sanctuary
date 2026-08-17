@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PrivatlivspolitikRouteImport } from './routes/privatlivspolitik'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServiceEssentialRouteImport } from './routes/service.essential'
 import { Route as ServiceHousekeepingRouteImport } from './routes/service.housekeeping'
 import { Route as ServiceSignatureRouteImport } from './routes/service.signature'
@@ -24,6 +25,11 @@ const IndexRoute = IndexRouteImport.update({
 const PrivatlivspolitikRoute = PrivatlivspolitikRouteImport.update({
   id: '/privatlivspolitik',
   path: '/privatlivspolitik',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServiceEssentialRoute = ServiceEssentialRouteImport.update({
@@ -51,6 +57,7 @@ const LovableEmailTransactionalPreviewRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/privatlivspolitik': typeof PrivatlivspolitikRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/service/essential': typeof ServiceEssentialRoute
   '/service/housekeeping': typeof ServiceHousekeepingRoute
   '/service/signature': typeof ServiceSignatureRoute
@@ -59,6 +66,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/privatlivspolitik': typeof PrivatlivspolitikRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/service/essential': typeof ServiceEssentialRoute
   '/service/housekeeping': typeof ServiceHousekeepingRoute
   '/service/signature': typeof ServiceSignatureRoute
@@ -68,6 +76,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/privatlivspolitik': typeof PrivatlivspolitikRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/service/essential': typeof ServiceEssentialRoute
   '/service/housekeeping': typeof ServiceHousekeepingRoute
   '/service/signature': typeof ServiceSignatureRoute
@@ -78,6 +87,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/privatlivspolitik'
+    | '/sitemap.xml'
     | '/service/essential'
     | '/service/housekeeping'
     | '/service/signature'
@@ -86,6 +96,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/privatlivspolitik'
+    | '/sitemap.xml'
     | '/service/essential'
     | '/service/housekeeping'
     | '/service/signature'
@@ -94,6 +105,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/privatlivspolitik'
+    | '/sitemap.xml'
     | '/service/essential'
     | '/service/housekeeping'
     | '/service/signature'
@@ -103,6 +115,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PrivatlivspolitikRoute: typeof PrivatlivspolitikRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ServiceEssentialRoute: typeof ServiceEssentialRoute
   ServiceHousekeepingRoute: typeof ServiceHousekeepingRoute
   ServiceSignatureRoute: typeof ServiceSignatureRoute
@@ -123,6 +136,13 @@ declare module '@tanstack/react-router' {
       path: '/privatlivspolitik'
       fullPath: '/privatlivspolitik'
       preLoaderRoute: typeof PrivatlivspolitikRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/service/essential': {
@@ -159,6 +179,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PrivatlivspolitikRoute: PrivatlivspolitikRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   ServiceEssentialRoute: ServiceEssentialRoute,
   ServiceHousekeepingRoute: ServiceHousekeepingRoute,
   ServiceSignatureRoute: ServiceSignatureRoute,
