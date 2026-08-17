@@ -149,6 +149,11 @@ export function ServicePage({ data }: { data: ServicePageData }) {
             >
               Book en samtale
             </a>
+            <p className="mt-6 text-sm font-light text-muted-foreground">
+              <a href="mailto:kontakt@stillehome.dk" className="link-underline">
+                kontakt@stillehome.dk
+              </a>
+            </p>
             <div className="mt-14">
               <Link to="/" hash="service" className="link-underline text-[0.7rem] tracking-[0.28em] uppercase">
                 Tilbage til vores service

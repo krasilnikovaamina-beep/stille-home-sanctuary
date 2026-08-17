@@ -129,6 +129,13 @@ export function BookingFlow({ initialService }: { initialService?: string }) {
           Vi har modtaget din ønskede STILLE-rutine. Vi vender personligt tilbage inden for få
           hverdage og bekræfter tilgængelighed samt de sidste detaljer.
         </p>
+        <p className="mt-6 max-w-md text-sm font-light leading-[2] text-muted-foreground">
+          Spørgsmål? Skriv til os på{" "}
+          <a href="mailto:kontakt@stillehome.dk" className="link-underline">
+            kontakt@stillehome.dk
+          </a>
+          .
+        </p>
       </div>
     );
   }
