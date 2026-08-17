@@ -22,7 +22,7 @@ export const submitBooking = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => schema.parse(data))
   .handler(async ({ data }) => {
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const { error } = await supabaseAdmin.from("booking_requests").insert({
+    const { data: inserted, error } = await supabaseAdmin.from("booking_requests").insert({
       navn: data.navn,
       email: data.email,
       telefon: data.telefon,
@@ -35,10 +35,10 @@ export const submitBooking = createServerFn({ method: "POST" })
       service: data.service,
       frequency: data.frequency,
       addons: data.addons,
-    });
+    }).select("id").single();
     if (error) throw new Error(`Kunne ikke gemme forespørgslen: ${error.message}`);
 
     const { notifyBookingRequest } = await import("./booking-notify.server");
-    const notified = await notifyBookingRequest(data);
+    const notified = await notifyBookingRequest(data, inserted?.id);
     return { ok: true as const, notified };
   });
