@@ -28,9 +28,14 @@ export async function notifyBookingRequest(
       ...(idempotencyKey ? { idempotencyKey: `booking-request-${idempotencyKey}` } : {}),
       replyTo: data.email,
     });
+    if (result.sent) {
+      console.log("[booking] notification sent", { to: NOTIFY_RECIPIENT, idempotencyKey });
+    } else {
+      console.error("[booking] notification not sent", { to: NOTIFY_RECIPIENT, reason: result.reason });
+    }
     return result.sent;
   } catch (error) {
-    console.error("Booking notification failed", error);
+    console.error("[booking] notification failed", { to: NOTIFY_RECIPIENT, idempotencyKey }, error);
     return false;
   }
 }
