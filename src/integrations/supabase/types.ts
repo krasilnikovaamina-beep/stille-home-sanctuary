@@ -14,7 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      booking_requests: {
+        Row: {
+          addons: Json
+          adresse: string | null
+          badevaerelser: string | null
+          besked: string | null
+          created_at: string
+          email: string
+          etager: string | null
+          frequency: string | null
+          id: string
+          navn: string
+          postnummer: string | null
+          service: string | null
+          stoerrelse: string | null
+          telefon: string | null
+        }
+        Insert: {
+          addons?: Json
+          adresse?: string | null
+          badevaerelser?: string | null
+          besked?: string | null
+          created_at?: string
+          email: string
+          etager?: string | null
+          frequency?: string | null
+          id?: string
+          navn: string
+          postnummer?: string | null
+          service?: string | null
+          stoerrelse?: string | null
+          telefon?: string | null
+        }
+        Update: {
+          addons?: Json
+          adresse?: string | null
+          badevaerelser?: string | null
+          besked?: string | null
+          created_at?: string
+          email?: string
+          etager?: string | null
+          frequency?: string | null
+          id?: string
+          navn?: string
+          postnummer?: string | null
+          service?: string | null
+          stoerrelse?: string | null
+          telefon?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
