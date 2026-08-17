@@ -48,7 +48,7 @@ const sections = [
           <br />
           CVR-nummer: 43510916
           <br />
-          Adresse: {placeholder("[Indsæt adresse]")}
+          Adresse: Helga Pedersens Gade 103, 8000 Aarhus C, Denmark
           <br />
           E-mail:{" "}
           <a href="mailto:kontakt@stillehome.dk" className="link-underline">
