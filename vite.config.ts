@@ -21,10 +21,10 @@ export default defineConfig({
   // Redirect TanStack Start's bundled server entry to src/server.ts
   server: { entry: "server" },
 
-  prerender: {
-    enabled: true,
-    crawlLinks: true,
-  },
+ tanstackStart: {
+  // Redirect TanStack Start's bundled server entry to src/server.ts
+  server: { entry: "server" },
+},
 },
   vite: {
     resolve: {
