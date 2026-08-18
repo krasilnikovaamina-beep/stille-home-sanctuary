@@ -17,11 +17,15 @@ const serverEnv = loadEnv(process.env['NODE_ENV'] ?? "development", process.cwd(
 Object.assign(process.env, serverEnv);
 
 export default defineConfig({
-  tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
-    server: { entry: "server" },
+ tanstackStart: {
+  // Redirect TanStack Start's bundled server entry to src/server.ts
+  server: { entry: "server" },
+
+  prerender: {
+    enabled: true,
+    crawlLinks: true,
   },
+},
   vite: {
     resolve: {
       alias: {
